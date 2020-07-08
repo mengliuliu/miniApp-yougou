@@ -1,0 +1,68 @@
+<view class="cart">
+    <!-- 当收货地址不存在，按钮显示     注意：空对象boolean类型也是 true -->
+    <view class="cart_address" wx:if="{{!address.userName}}">
+        <button type="primary" plain bind:tap="handldChooseAddress">添加收货地址</button>
+    </view>
+    <!-- 当收货地址存在，详细地址显示 -->
+    <view class="cart_info" wx:else>
+        <view class="info_left">
+            <view>收货人:{{address.userName}}</view>
+            <view>{{address.all}}</view>
+        </view>
+        <view class="info_right">
+            <view>{{address.telNumber}}</view>
+        </view>
+    </view>
+    <!-- 购物车文字 -->
+    <view class="cart_title">购物车</view>
+    <!-- 商品详情区域 -->
+    <view class="cart_good">
+        <block wx:if="{{cart.length !== 0}}">
+            <view class="good_item" wx:for="{{cart}}" wx:key="goods_id">
+                <view class="item_checkbox">
+                    <checkbox-group data-goods_id="{{item.goods_id}}" bind:change="handleCheckoutChange">
+                        <checkbox checked="{{item.checked}}" />
+                    </checkbox-group>
+                </view>
+                <navigator class="item_img">
+                    <image mode="widthFix" src="{{item.goods_small_logo}}" />
+                </navigator>
+                <view class="item_info">
+                    <view class="info_name">{{item.goods_name}}</view>
+                    <view class="info_number">
+                        <view class="number_price">￥{{item.goods_price}}</view>
+                        <view class="number_num">
+                            <view bind:tap="handleItemNumEdit" data-id="{{item.goods_id}}" data-op="{{-1}}" class="num_icon">
+                                -
+                            </view>
+                            <view class="num_num">{{item.num}}</view>
+                            <view bind:tap="handleItemNumEdit" data-id="{{item.goods_id}}" data-op="{{1}}" class="num_icon">
+                                +
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <block wx:else>
+            <image mode="widthFix" src="/kong.jpg" />
+        </block>
+    </view>
+    <!-- 底部tab区域 -->
+    <view class="cart_bottom">
+        <view class="bottom_left">
+            <checkbox-group bind:change="handleAllcheckedChange">
+                <checkbox checked="{{allChecked}}" />
+                全选
+            </checkbox-group>
+        </view>
+        <view class="bottom_mid">
+            <view class="mid_total">
+                合计:
+                <text>￥{{totalPrice}}</text>
+            </view>
+            <view class="mid_fare">包含运费</view>
+        </view>
+        <view class="bottom_right" bind:tap="handlePay">结算（{{totalNum}}）</view>
+    </view>
+</view>

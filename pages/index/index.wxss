@@ -1,0 +1,43 @@
+/* view {
+  使用主题颜色
+  color: var(--themeColor);
+} */
+.index swiper {
+  width: 750rpx;
+  height: 340rpx;
+}
+.index image {
+  width: 100%;
+}
+.index_nav {
+  display: flex;
+  padding: 10rpx;
+}
+.index_nav navigator {
+  flex: 1;
+}
+.index_nav navigator image {
+  width: 100%;
+}
+.index_floor .floor .floor_title {
+  width: 100%;
+  padding: 10rpx 0;
+}
+.index_floor .floor .floor_list {
+  clear: both;
+}
+.index_floor .floor .floor_list navigator {
+  width: 33.3%;
+  float: left;
+}
+.index_floor .floor .floor_list navigator:nth-last-child(-n+4) {
+  height: 27.72711207vw;
+  border-left: 10rpx solid #fff;
+}
+.index_floor .floor .floor_list navigator:nth-last-child(2) {
+  border-bottom: 10rpx solid #fff;
+}
+.index_floor .floor .floor_list navigator image {
+  width: 100%;
+  height: 100%;
+}

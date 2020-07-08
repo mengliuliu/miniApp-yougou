@@ -1,0 +1,31 @@
+<view class="category">
+  <!-- 搜索框区域 -->
+  <SearchInput />
+  <!-- 主体区域 -->
+  <view class="cate_container">
+    <scroll-view class="leftMenu" scroll-y>
+      <block wx:for="{{leftMenuList}}" wx:key="*this">
+        <view class="menuItem {{currentIndex === index ? 'active' : ''}}"
+              bind:tap="handleCateClick"
+              data-index="{{index}}">
+          {{item}}
+        </view>
+      </block>
+    </scroll-view>
+    <scroll-view class="rightGood" scroll-top="{{scrollTop}}" scroll-y>
+      <block wx:for="{{rightGoodList}}" wx:key="*this" wx:for-item="item1" wx:for-index="index1">
+        <view class="goodCate">
+          <view class="cateTitle">/{{item1.cat_name}}/</view>
+          <view class="cateList">
+            <block wx:for="{{item1.children}}" wx:key="*this" wx:for-item="item2" wx:for-index="index2">
+              <navigator class="cateItem" url="/pages/goods_list/goods_list?cid={{item2.cat_id}}">
+                <image mode="widthFix" src="{{item2.cat_icon}}" />
+                <view>{{item2.cat_name}}</view>
+              </navigator>
+            </block>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

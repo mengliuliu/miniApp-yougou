@@ -1,0 +1,28 @@
+.first_tab {
+  border-bottom: 1px solid #ccc;
+}
+.first_tab .tab_item {
+  display: flex;
+}
+.first_tab .tab_item .left_img {
+  flex: 2;
+}
+.first_tab .tab_item .left_img image {
+  width: 70%;
+}
+.first_tab .tab_item .right_info {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.first_tab .tab_item .right_info .info_title {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.first_tab .tab_item .right_info .info_price {
+  color: var(--themeColor);
+  font-size: 30rpx;
+}

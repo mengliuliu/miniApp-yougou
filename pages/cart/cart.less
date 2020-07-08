@@ -1,0 +1,135 @@
+page {
+    padding-bottom: 90rpx;
+}
+.cart {
+  .cart_address {
+    padding: 0 20rpx;
+    button {
+      width: 60%;
+    }
+  }
+  .cart_info {
+    display: flex;
+    padding: 10rpx;
+    .info_left {
+      flex: 5;
+    }
+    .info_right {
+      text-align: right;
+      flex: 3;
+    }
+  }
+
+  .cart_title {
+    font-size: 32rpx;
+    font-weight: 600;
+    color: var(--themeColor);
+    padding: 10rpx;
+    border-top: 2rpx solid red;
+    border-bottom: 2rpx solid red;
+  }
+  .cart_good {
+    .good_item {
+      display: flex;
+      padding: 10rpx 5rpx;
+      border-bottom: 3rpx solid #ccc;
+      .item_checkbox {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .item_img {
+        flex: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        image {
+          width: 80%;
+        }
+      }
+      .item_info {
+        flex: 4;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .info_name {
+          display: -webkit-box;
+          overflow: hidden;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+        }
+        .info_number {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .number_price {
+            color: var(--themeColor);
+          }
+          .number_num {
+            display: flex;
+            text-align: center;
+
+            .num_num {
+              line-height: 55rpx;
+            }
+            .num_icon {
+              border: 1rpx solid #ccc;
+              width: 55rpx;
+              height: 55rpx;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .cart_bottom {
+    display: flex;
+    // padding: 10rpx;
+    border-top: 2rpx solid #ccc;
+    border-bottom: 2rpx solid #ccc;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 90rpx;
+    width: 100%;
+
+    background-color: #fff;
+    .bottom_left {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      checkbox-group {
+          font-size: 24rpx;
+      }
+    }
+    .bottom_mid {
+      flex: 5;
+      text-align: right;
+      padding-right: 10rpx;
+      .mid_total {
+        text {
+          color: var(--themeColor);
+          font-size: 32rpx;
+          font-weight: 600;
+        }
+      }
+      .mid_fare {
+        font-size: 28rpx;
+      }
+    }
+    .bottom_right {
+      flex: 3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--themeColor);
+      color: white;
+      font-weight: 600;
+    }
+  }
+}
