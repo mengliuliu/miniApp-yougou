@@ -157,6 +157,7 @@ Page({
     try {
       // 1. 获取权限状态
       const res1 = await getSetting();
+      console.log("res1", res1);
       const scopeAddress = res1.authSetting["scope.address"];
       // 2. 判断权限状态
       if (scopeAddress === false) {
@@ -294,7 +295,7 @@ Page({
     });
 
     // 如果数组为空，则全选未被选中
-    // cart.length === 0 ? (allChecked = false) : "";
+    cart.length === 0 ? (allChecked = false) : "";
 
     // 把数据设置给 data 中的变量
     this.setData({

@@ -5,6 +5,9 @@ export const getSetting = () => {
         resolve(result);
         console.log(result);
       },
+      fail: (err) => {
+        reject(err);
+      },
     });
   });
 };
@@ -16,6 +19,9 @@ export const openSetting = () => {
         resolve(result);
         console.log(result);
       },
+      fail: (err) => {
+        reject(err);
+      },
     });
   });
 };
@@ -26,6 +32,9 @@ export const chooseAddress = () => {
       success: (result) => {
         resolve(result);
         console.log(result);
+      },
+      fail: (err) => {
+        reject(err);
       },
     });
   });
@@ -39,6 +48,9 @@ export const showModal = (content) => {
       success: (res) => {
         resolve(res);
       },
+      fail: (err) => {
+        reject(err);
+      },
     });
   });
 };
@@ -50,6 +62,23 @@ export const showToast = (title) => {
       icon: "none",
       success: (res) => {
         resolve(res);
+      },
+      fail: (err) => {
+        reject(err);
+      },
+    });
+  });
+};
+
+export const login = () => {
+  return new Promise((resolve, reject) => {
+    wx.login({
+      timeout: 10000,
+      success: (result) => {
+        resolve(result);
+      },
+      fail: (err) => {
+        reject(err);
       },
     });
   });

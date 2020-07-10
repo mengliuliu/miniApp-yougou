@@ -72,6 +72,8 @@ page {
 }
 .cart .cart_good .good_item .item_info .info_number .number_num .num_num {
   line-height: 55rpx;
+  width: 55rpx;
+  height: 55rpx;
 }
 .cart .cart_good .good_item .item_info .info_number .number_num .num_icon {
   border: 1rpx solid #ccc;
