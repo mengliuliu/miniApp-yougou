@@ -1,2 +1,7 @@
-<!--pages/order/order.wxml-->
-<text>pages/order/order.wxml</text>
+<view class="order">
+    <Tabs tabs="{{tabs}}" bind:tabClick="tabClick">
+        <block wx:if="{{tabs[0].isActive}}">
+            123
+        </block>
+    </Tabs>
+</view>

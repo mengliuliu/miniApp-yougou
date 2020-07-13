@@ -38,6 +38,9 @@ page {
   align-items: center;
   border-left: 1rpx solid #000;
 }
+.detail .detail_info .info_intro .intro_right .icon-shoucang1 {
+  color: var(--themeColor);
+}
 .detail .detail_imgtext .imgtext_tit {
   font-size: 32rpx;
   color: var(--themeColor);

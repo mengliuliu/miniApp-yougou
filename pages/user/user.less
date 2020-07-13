@@ -1,0 +1,125 @@
+.user {
+  font-size: 24rpx;
+  color: #666;
+  .user_info {
+    position: relative;
+    background-color: var(--themeColor);
+    height: 45vh;
+    .user_infowrap {
+      .info_bg {
+        image {
+          height: 46vh;
+          filter: blur(10rpx);
+        }
+      }
+      .info_textimg {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 30%;
+        image {
+          width: 150rpx;
+          height: 150rpx;
+          border-radius: 50%;
+        }
+        view {
+          margin-top: 50rpx;
+          text-align: center;
+        }
+      }
+    }
+    .user_login {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 30%;
+      width: 120rpx;
+      height: 80rpx;
+      line-height: 80rpx;
+      border: 8rpx solid #dedede;
+      border-radius: 10rpx;
+      text-align: center;
+      font-size: 38rpx;
+      navigator {
+      }
+    }
+  }
+  .user_content {
+    position: relative;
+    background-color: #dedede;
+    height: 70vh;
+    .content_wrap {
+      width: 90%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -30rpx;
+      padding-bottom: 40rpx;
+
+      .content_main {
+        display: flex;
+        background-color: #fff;
+
+        navigator {
+          flex: 1;
+          text-align: center;
+          padding: 10rpx 0;
+          .main_num {
+            color: var(--themeColor);
+          }
+          .main_text {
+            font-size: 24rpx;
+          }
+        }
+      }
+      .content_orders {
+        .orders_title {
+          padding: 10rpx 24rpx;
+          margin: 30rpx 0 5rpx 0;
+          font-size: 24rpx;
+          background-color: #fff;
+        }
+        .orders_item {
+          background-color: #fff;
+          padding: 10rpx 20rpx;
+          display: flex;
+          navigator {
+            flex: 1;
+            text-align: center;
+            .item_icon {
+              color: var(--themeColor);
+            }
+            .item_text {
+              font-size: 24rpx;
+            }
+          }
+        }
+      }
+      .content_other {
+        .other_address {
+          background-color: #fff;
+          margin-top: 30rpx;
+          margin-bottom: 30rpx;
+          padding: 20rpx;
+        }
+        .other_item {
+          .item_wrap {
+            background-color: #fff;
+            margin-top: 10rpx;
+            padding: 20rpx;
+          }
+          .item_concate {
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+        .other_recommend {
+          background-color: #fff;
+          margin-top: 30rpx;
+          margin-bottom: 30rpx;
+          padding: 20rpx;
+        }
+      }
+    }
+  }
+}

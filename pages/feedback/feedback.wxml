@@ -1,2 +1,30 @@
-<!--pages/feedback/feedback.wxml-->
-<text>pages/feedback/feedback.wxml</text>
+<view class="feedback">
+    <Tabs tabs="{{tabs}}" bind:tabClick="tabClick">
+        <block wx:if="{{tabs[0].isActive}}">
+            <view class="feedback_main">
+                <view class="main_title">问题的种类</view>
+                <view class="main_tips">
+                    <view class="tips_item">功能建议</view>
+                    <view class="tips_item">购买遇到问题</view>
+                    <view class="tips_item">性能问题</view>
+                    <view class="tips_item">其他</view>
+                </view>
+                <view class="main_content">
+                    <textarea value="{{textVal}}" bind:input="handleTextInput" placeholder="请描述一下您的问题"></textarea>
+                    <view class="content_tool">
+                        <button bind:tap="handleAddImgClick">+</button>
+                        <view class="upimg" wx:for="{{imgsList}}" wx:key="*this">
+                            <UpImg src="{{item}}" bind:IconClick="handleIconClick" data-index="{{index}}"></UpImg>
+                        </view>
+                    </view>
+                </view>
+                <view class="main_btn">
+                    <button type="default" bind:tap="handleFormSubmit">
+                        <icon type="success_no_circle" size="23" color="white" />
+                        提交
+                    </button>
+                </view>
+            </view>
+        </block>
+    </Tabs>
+</view>

@@ -43,7 +43,9 @@ Page({
   onLoad: function (options) {
     console.log(options);
     // 给查询参数的cid赋值
-    this.QueryParams.cid = options.cid;
+    this.QueryParams.cid = options.cid || "";
+    // 给查询参数的query赋值
+    this.QueryParams.query = options.query || "";
     // 调用接口获取商品的数据
     this.getGoodData();
   },

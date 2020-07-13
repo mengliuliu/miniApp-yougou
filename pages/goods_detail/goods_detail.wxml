@@ -12,8 +12,8 @@
         <view class="info_price">￥{{goodDetailObj.goods_price}}</view>
         <view class="info_intro">
             <view class="intro_left">{{goodDetailObj.goods_name}}</view>
-            <view class="intro_right">
-                <view class="right_icon iconfont icon-shoucang"></view>
+            <view class="intro_right" bind:tap="handleCollectClick">
+                <view class="right_icon iconfont icon-shoucang {{isCollect ? 'icon-shoucang1' : ''}}"></view>
                 <view class="right_collect">收藏</view>
             </view>
         </view>
